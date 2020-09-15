@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: code-generator
+
+  # 数据源
+  datasource:
+    name: base
+    url: jdbc:mysql://10.10.14.199:22066/material_base?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    password: DsideaL147258369
+
+  # 模板引擎
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
+
+# Mybatis
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+  # log4j2日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
